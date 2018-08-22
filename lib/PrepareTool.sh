@@ -3,7 +3,8 @@
 set -e
 
 if ! hash apt-get 2>/dev/null; then
-    whiptail --title "Orangepi Build System" --msgbox "This scripts requires a Debian based distrbution. If you not use Debian/Ubunut, pls install:[ bsdtar mtools u-boot-tools pv bc sunxi-tools gcc automake make qemu dosfstools ]" 10 60
+    whiptail --title "Orangepi Build System" --msgbox \
+        "This scripts requires a Debian based distribution. If you do not use Debian/Ubuntu, please install:[ bsdtar mtools u-boot-tools pv bc sunxi-tools gcc automake make qemu dosfstools ]" 10 60
     exit 1
 fi
 
