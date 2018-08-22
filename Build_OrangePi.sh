@@ -6,6 +6,13 @@ set -e
 # 
 TOP_ROOT=`pwd`
 
+# Check graphic box tool presence
+if ! hash whiptail 2>/dev/null;
+then
+    echo "Please install whiptail first" !
+    exit 1
+fi
+
 # Get root first
 cd $TOP_ROOT/lib
 clear
