@@ -20,7 +20,10 @@ clear
 
 # Prepare running-tools
 if [ ! -f $TOP_ROOT/lib/.tmp_tools ]; then
-    sudo ./PrepareTool.sh
+    if whiptail --title "Orangepi Build tools" --yesno "Automatically install build tools ? (if not sure or first time running the build setup, select Yes)" 10 60
+    then
+        sudo ./PrepareTool.sh
+    fi
     echo "Install Toolchain" > $TOP_ROOT/lib/.tmp_tools
 fi
 
